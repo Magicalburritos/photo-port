@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Modal({ currentPhoto }) {
+const Modal = ({ onClose, currentPhoto }) => {
   const { name, category, description, index } = currentPhoto;
   return (
     <div className="modalBackdrop">
@@ -10,10 +10,13 @@ function Modal({ currentPhoto }) {
           src={require(`../../assets/large/${category}/${index}.jpg`)}
           alt="current category"
         />
+        <button onClick={onClose} type="button">
+          Close this modal
+        </button>
         <p>{description}</p>
       </div>
     </div>
   );
-}
+};
 
 export default Modal;
